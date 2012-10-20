@@ -1,0 +1,33 @@
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/application.css">
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="row-fluid">
+			<div class="span2" style="height: 100%; overflow-y: auto;">
+				<ul>
+					<li>Membro 1</li>
+					<li>Membro 2</li>
+				</ul>
+			</div>
+			<div class="span10">
+				<div class="row" style="height: 90%; overflow-y: auto;">
+					<div id="board" class="span8">
+					</div>
+				</div>
+				<div class="row">
+					<div class="span12">
+						<textarea class="span12"></textarea>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+	<script src="/socket.io/socket.io.js"></script>
+  <script src="javascript/application.js"></script>
+</body>
+</html>

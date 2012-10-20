@@ -1,0 +1,8 @@
+{
+	"name": "nodejs-socketio-example",
+	"version": "1.0.0-SNAPSHOT",
+	"dependencies": {
+		"socket.io": "0.9.x",
+		"connect": "2.x"
+	}
+}
