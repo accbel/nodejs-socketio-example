@@ -5,3 +5,14 @@ ul
 dl {
   margin: 0;
 }
+textarea {
+  margin-top: 5;
+}
+.members {
+  height: 100%;
+  overflow-y: auto;
+}
+.messages {
+  height: 90%; 
+  overflow-y: auto;
+}
