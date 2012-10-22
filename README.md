@@ -14,7 +14,7 @@ Pre-requisites
         make
         sudo make install
 
-If you prefer, Node.js is also available as native package. See [here](https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager)
+If you prefer, Node.js is also available as a native package. See [here](https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager)
 
 * Install NPM
 
@@ -23,7 +23,7 @@ If you prefer, Node.js is also available as native package. See [here](https://g
 How to run
 -----------------------
 
-* First of all, checkout the project (git needed) or download and extract it at a location of your choose.
+* First of all, checkout the project (git needed) or download and extract it to a location of your choose.
 * Then, `cd nodejs-socketio-example/` and `npm install`
 * Check for possible dependency installation errors. If there are no errors, type `node server.js`
 * Type in your browser `http://localhost:8080/`
