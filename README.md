@@ -28,6 +28,6 @@ How to run
 * Check for possible dependency installation errors. If there are no errors, type `node server.js`
 * Type in your browser `http://localhost:8080/`
 
-**NOTE**: To allow access to remote clients, please follow:
+**NOTE**: To allow access from remote clients, please follow:
 * Open file `public/javascript/application.js`;
 * At line 22, change the code `io.connect('http://localhost:8080')` to `io.connect('http://<YOUR PUBLIC IP>:8080')`;
