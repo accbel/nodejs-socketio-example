@@ -6,8 +6,9 @@ var room = {
     this.board = $('#board');
     this.members = $('.members ul');
 
-    this.input.keypress(function(){
-      if ( event.which == 13 ) {
+    this.input.keypress(function(e){
+      var code = e.charCode || e.keyCode;
+      if ( code == 13 ) {
         room.sendMessage();
         return false;
       }
@@ -54,9 +55,9 @@ var room = {
     this.members.find("li:contains('"+who+"')").remove();
   },
   printMessage: function(author,message) {
-    var newMessage = $('<dl></dl>');
-    var authorTag = $('<dt></dt>');
-    var messageTag = $('<dd></dd>');
+    var newMessage = $('<dl>');
+    var authorTag = $('<dt>');
+    var messageTag = $('<dd>');
 
     authorTag.html(author);
     messageTag.html(message);
