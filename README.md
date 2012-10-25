@@ -30,4 +30,4 @@ How to run
 
 **NOTE**: To allow access from remote clients, please follow:
 * Open file `public/javascript/application.js`;
-* At line 22, change the code `io.connect('http://localhost:8080')` to `io.connect('http://<YOUR PUBLIC IP>:8080')`;
+* At line 23, change the code `io.connect('http://localhost:8080')` to `io.connect('http://<YOUR PUBLIC IP>:8080')`;
