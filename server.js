@@ -1,32 +1,30 @@
 var connect = require('connect')
   , http = require('http')
-  , io = require('socket.io');
-
-var clients = [];
-
-var app = connect().use(connect.static('public'));
-var server = http.createServer(app);
-io = io.listen(server);
+  , socketIo = require('socket.io')
+  , clients = []
+  , app = connect().use(connect.static('public'))
+  , server = http.createServer(app)
+  , io = socketIo.listen(server);
 
 server.listen(8080);
-
-io.sockets.on('connection', function (socket) {
-  socket.on('message', function(data,callback){
+io.sockets.on('connection', function(socket) {
+  socket.on('message', function(data, callback){
     socket.broadcast.json.send(data);
   });
 
-  socket.on('new', function (data,callback) {
-    socket.set('nickname',data.name);
+  socket.on('new', function(data, callback) {
     clients.push(data.name);
-    socket.broadcast.emit('new',data.name);
+    var index = clients.lastIndexOf(data.name);
+
+    socket.set('userIndex', index);
+    socket.broadcast.emit('new', { id: index, who: data.name });
     callback(clients);
   });
 
-  socket.on('disconnect',function(){
-    socket.get('nickname',function(err,name){
-      var index = clients.indexOf(name);
+  socket.on('disconnect', function(){
+    socket.get('userIndex', function(err, index){
+      socket.broadcast.emit('leave', { id: index, message: { author: clients[index], message: 'Saiu da sala.' } });
       clients.splice(index, 1);
-      socket.broadcast.emit('leave',name);
     });
   });
 });
